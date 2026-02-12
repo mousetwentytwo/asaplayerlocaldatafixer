@@ -13,6 +13,22 @@ The tool parses the UE5 binary property format into Python dicts/JSON so you can
 - **Corrupted upload data** — stale or malformed entries left behind after transfers, server crashes, or rollbacks.
 - **Inspect upload data** — check what is actually in the file without loading it into the game.
 
+## Setup
+
+Install Python 3.10+ if not already available and activate a virtual environment before using or building
+
+```bash
+winget install Python.Python.3.14              # Windows
+# sudo apt install python3 python3-venv        # Debian / Ubuntu
+# brew install python                           # macOS
+
+python -m venv .venv
+.venv\Scripts\activate        # Windows
+# source .venv/bin/activate   # Linux / macOS
+```
+
+No external dependencies — uses only the Python standard library.
+
 ## Usage
 
 Single script, subcommands (defaults to `gui` when none given):
