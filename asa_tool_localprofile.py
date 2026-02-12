@@ -46,7 +46,6 @@ import io
 import json
 import os
 import struct
-import subprocess
 import sys
 import threading
 
@@ -702,18 +701,23 @@ def cmd_gui(args):
 
         def _run_verify(self, path):
             self.notebook.select(2)  # Log tab
-            script = os.path.abspath(__file__)
-            python = sys.executable
 
             def _worker():
                 try:
-                    result = subprocess.run(
-                        [python, script, 'verify', path],
-                        capture_output=True, text=True, timeout=30)
-                    output = result.stdout + result.stderr
+                    import io as _io
+                    old_stdout, old_stderr = sys.stdout, sys.stderr
+                    sys.stdout = buf_out = _io.StringIO()
+                    sys.stderr = buf_err = _io.StringIO()
+                    try:
+                        _verify_file(path, verbose=False)
+                    finally:
+                        sys.stdout, sys.stderr = old_stdout, old_stderr
+                    output = buf_out.getvalue() + buf_err.getvalue()
                 except Exception as e:
                     output = f'Verification error: {e}'
                 self.after(0, lambda: self._log(output.strip()))
+
+            threading.Thread(target=_worker, daemon=True).start()
 
             threading.Thread(target=_worker, daemon=True).start()
 
