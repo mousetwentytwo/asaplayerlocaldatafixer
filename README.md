@@ -1,4 +1,4 @@
-# arkplayerlocaldatafixer
+# asaplayerlocaldatafixer
 Tool to help clear stuck Items and Dinos from your local transfer save file of ARK: Survival Ascended.
 
 
@@ -31,7 +31,7 @@ python asa_tool_localprofile.py verify  PlayerLocalData.arkprofile   # validate 
 | `build` | `<input.json> [-o out.arkprofile]` | Strips `.json` for default output |
 | `verify` | `<file> ... [-v]` | `-v` for verbose per-property output |
 
-## [Library](arkplayerlocaldatafixer/README.md)
+## [Library](asaplayerlocaldatafixer/README.md)
 
 ## Building a standalone exe
 

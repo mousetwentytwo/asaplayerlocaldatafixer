@@ -921,7 +921,7 @@ class PlayerLocalData:
 
     Example usage::
 
-        from arkplayerlocaldatafixer.asa import PlayerLocalData
+        from asaplayerlocaldatafixer.asa import PlayerLocalData
 
         pld = PlayerLocalData('PlayerLocalData.arkprofile')
         print(pld.map_name)

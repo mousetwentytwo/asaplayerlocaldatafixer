@@ -1,7 +1,7 @@
-# arkplayerlocaldatafixer — Library
+# asaplayerlocaldatafixer — Library
 
 ```python
-from arkplayerlocaldatafixer.asa import PlayerLocalData
+from asaplayerlocaldatafixer.asa import PlayerLocalData
 
 pld = PlayerLocalData('PlayerLocalData.arkprofile')
 print(pld)              # <PlayerLocalData … items=50 dinos=2>

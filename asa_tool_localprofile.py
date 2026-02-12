@@ -51,7 +51,7 @@ import sys
 import threading
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                'arkplayerlocaldatafixer'))
+                                'asaplayerlocaldatafixer'))
 from asa import PlayerLocalData
 from binary import BinaryStream
 
